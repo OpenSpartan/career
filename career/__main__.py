@@ -72,8 +72,8 @@ def main():
 
             print('Processing rank data...')
 
-            md_table = '''| Rank Image | Rank Adornment Image | Subtitle | Title | Tier | XP | Percent To Hero |
-|:-----------|:---------------------|:------|:---------|:------|:------|:----------------|'''
+            md_table = '''| Rank Image | Rank Adornment Image | Title | XP | Percent To Hero |
+|:-----------|:---------------------|:------|:---------|:----------------|'''
 
             for rank in ranks:
                 xp_required = rank.get("XpRequiredForRank", 0)
@@ -95,7 +95,7 @@ def main():
                 download_image(rank_large_icon, spartan_token)
                 download_image(rank_adornment_icon, spartan_token)
 
-                md_table += f'\n| <img src="{IMAGE_PREFIX}{rank_icon}" alt="Large rank icon for {rank_title} {rank_subtitle}"/> | <img src="{IMAGE_PREFIX}{rank_adornment_icon}" alt="Adornment rank icon for {rank_title} {rank_subtitle}"/> | {rank_subtitle} | {rank_title} | { rank_tier } | {formatted_xp} | {formatted_percentage} |'
+                md_table += f'\n| <img src="{IMAGE_PREFIX}{rank_icon}" alt="Large rank icon for {rank_title} {rank_subtitle}"/> | <img src="{IMAGE_PREFIX}{rank_adornment_icon}" alt="Adornment rank icon for {rank_title} {rank_subtitle}"/> | {rank_subtitle} {rank_title} { rank_tier } | {formatted_xp} | {formatted_percentage} |'
 
             with open("career_table.md", "w") as file:
                 file.write(md_table)
