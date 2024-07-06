@@ -1,4 +1,4 @@
-# Halo Infinite Career Rank Extractor
+# OpenSpartan Career Rank Extractor
 
 [**▶️ See output**](https://den.dev/blog/halo-infinite-career-ranks/)
 
